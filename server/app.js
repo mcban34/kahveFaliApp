@@ -5,7 +5,7 @@ import OpenAI from "openai";
 
 const openai = new OpenAI(
   {
-    apiKey: "BRUAYA-APIKEY-GELECEK",
+    apiKey: "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",
   }
 );
 const app = express()
