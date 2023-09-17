@@ -5,7 +5,7 @@ import OpenAI from "openai";
 
 const openai = new OpenAI(
   {
-    apiKey: "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",
+    apiKey: "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",
   }
 );
 const app = express()
@@ -17,19 +17,20 @@ app.get('/', (req, res) => {
 })
 
 app.post('/create-fake-comments', async (req, res) => {
-  const { systemMessage } = req.body;
-
+  const { systemMessage,appName,appAge,appRelationship,appCareer,appGender } = req.body;
+  const userContent = `${appName}-${appRelationship}-${appAge}-${appCareer}-${appGender}`
   try { 
     
     async function main() {
       const completion = await openai.chat.completions.create({
         messages: [
           { role: 'system', content: systemMessage },
-          { role: 'user', content: 'bir kahve falı oluştur' },
+          { role: 'user', content: userContent },
         ],
         model: "gpt-3.5-turbo",
       });
-      console.log(completion.choices[0].message.content);
+      // console.log(completion.choices[0].message.content);
+      console.log(completion.choices[0])
       res.json(completion.choices[0].message.content);
     }
     main();

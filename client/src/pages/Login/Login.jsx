@@ -6,7 +6,7 @@ function Login() {
     <div className="loginApp">
       <div className='loginPage'>
         <div className="loginPageTopContent">
-          <h2>Semra Abla Fal Rehberi</h2>
+          <h2>Fal Rehberi App</h2>
           <p>Kahveyle başlayan serüveniniz, geleceğinizi aydınlatan bir yolculuğa dönüşebilir. </p>
         </div>
         <div className="loginPageTop">

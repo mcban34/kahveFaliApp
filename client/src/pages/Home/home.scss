@@ -1,0 +1,53 @@
+.homeApp {
+    .homeAppHeaderImg {
+        border-radius: 10px;
+        width: 50%;
+    }
+
+    form {
+
+        input,
+        select {
+            width: 100%;
+            height: 2.5rem;
+            margin-top: .5rem;
+            padding: .5rem;
+            border-radius: .5rem;
+            border: none;
+        }
+        img {
+            margin-top: .5rem;
+        }
+        .disabled-img{
+            display: none;
+        }
+        .enabled-img{
+            display: block;
+        }
+        .inputFile{
+            padding: 0;
+            color: $brown !important;
+            display: inline-block;
+        }
+        label{
+            color: $orange;
+        }
+
+    }
+
+    .falGonder {
+        background-color: $orange;
+        border: none;
+        width: 100%;
+        height: 3rem;
+        margin-top: 1rem;
+        border-radius: 30px;
+        font-weight: 900;
+    }
+
+    @media screen and (max-width:768px) {
+        .homeAppHeaderImg {
+            width: 100%;
+        }
+    }
+}
