@@ -1,11 +1,13 @@
-import "dotenv/config"
 import express from "express"
 import cors from "cors"
 import OpenAI from "openai";
+import 'dotenv/config'
+// require('dotenv').config();
+console.log(process.env.API_KEY);
 
 const openai = new OpenAI(
   {
-    apiKey: "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",
+    apiKey: process.env.API_KEY,
   }
 );
 const app = express()
@@ -29,7 +31,6 @@ app.post('/create-fake-comments', async (req, res) => {
         ],
         model: "gpt-3.5-turbo",
       });
-      // console.log(completion.choices[0].message.content);
       console.log(completion.choices[0])
       res.json(completion.choices[0].message.content);
     }

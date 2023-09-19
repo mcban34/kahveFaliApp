@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
-    const [test,setTest] = useState('')
     const [response, setResponse] = useState('');
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
@@ -15,6 +14,7 @@ function Home() {
     const [isLoading, setIsLoading] = useState(false); // Yüklenme durumu eklendi
     const [selectedImage, setSelectedImage] = useState(null); // Seçilen resim verisi
     const [isImageSelected, setIsImageSelected] = useState(false); // Resim seçildi mi?
+    const [errorHelp,setErrorHelp] = useState(false)
 
     const navigate = useNavigate()
 
@@ -75,10 +75,10 @@ function Home() {
                 setResponse(data);
                 navigate('/output', {state:{data}})
             } else {
-                console.error('API çağrısı başarısız oldu.');
+                setErrorHelp(true)
             }
-        } catch (error) {
-            console.error('API çağrısı sırasında hata oluştu:', error);
+        } catch {
+            setErrorHelp(true)
         } finally {
             setIsLoading(false);
         }
@@ -117,12 +117,11 @@ function Home() {
                                 }
                             </label>
                             <button type="submit" className='falGonder' disabled={!isFormValid || isLoading}>
-                                {isLoading ? 'Kahve falın yükleniyor...' : 'Gönder'}
+                                {isLoading ? 'Kahve falın yükleniyor...' : errorHelp ? "Falcımız Biraz Yoğun, Yeniden Dene" : "Gönder"}
                             </button>
                         </form>
                     </Col>
                 </Row>
-
             </Container>
             <p>{response}</p>
         </div>
