@@ -11,6 +11,7 @@ const openai = new OpenAI(
   }
 );
 const app = express()
+
 app.use(cors())
 app.use(express.json())
 

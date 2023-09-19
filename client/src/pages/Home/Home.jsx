@@ -73,7 +73,7 @@ function Home() {
                 console.log('Başarıyla çalıştırıldı.');
                 const data = await response.json();
                 setResponse(data);
-                navigate('/output', {state:{data}})
+                navigate('/output', {state:{data,name}})
             } else {
                 setErrorHelp(true)
             }
