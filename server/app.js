@@ -5,7 +5,7 @@ import OpenAI from "openai";
 
 const openai = new OpenAI(
   {
-    apiKey: "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",
+    apiKey: "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",
   }
 );
 const app = express()

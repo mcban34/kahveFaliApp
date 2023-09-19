@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
+    const [test,setTest] = useState('')
     const [response, setResponse] = useState('');
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
@@ -72,6 +73,7 @@ function Home() {
                 console.log('Başarıyla çalıştırıldı.');
                 const data = await response.json();
                 setResponse(data);
+                navigate('/output', {state:{data}})
             } else {
                 console.error('API çağrısı başarısız oldu.');
             }
@@ -79,7 +81,6 @@ function Home() {
             console.error('API çağrısı sırasında hata oluştu:', error);
         } finally {
             setIsLoading(false);
-            
         }
     };
 
