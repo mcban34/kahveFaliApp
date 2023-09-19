@@ -88,9 +88,12 @@ function Home() {
         <div className='homeApp'>
             <Container>
                 <Row className='justify-content-center align-items-center vh-100'>
-                    <Col md={6} className='text-md-center'>
-                        <img className='homeAppHeaderImg' src="http://localhost:3000/img/homeHeader.jpg" alt="" />
-                        <form onSubmit={handleClick}>
+                    <Col md={6} className=''>
+                        <div className="homeHeaderBg">
+                            <h4>Gerekli Bilgileri Gir<br/>Hemen Başla!</h4>
+                            <img width={140} src="http://localhost:3000/img/homeHead.png" alt="" />
+                        </div>
+                        <form onSubmit={handleClick} className='text-md-center'>
                             <input type="text" placeholder='Adınız' value={name} onChange={(e) => setName(e.target.value)} />
                             <input type="number" placeholder='Yaşınız' value={age} onChange={(e) => setAge(e.target.value)} /> <br />
                             <select value={relationship} onChange={(e) => setRelationship(e.target.value)}>

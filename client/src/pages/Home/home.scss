@@ -1,8 +1,29 @@
 .homeApp {
-    .homeAppHeaderImg {
-        border-radius: 10px;
-        width: 50%;
+
+    .homeHeaderBg{
+        width: 100%;
+        background-color: $orange;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.2rem;
+        position: relative;
+        border-radius: 1rem;
+        h4{
+            font-weight: 900;
+            color: $brown;
+        }
+        img{
+            position: absolute;
+            right: -10px;
+            top: -65px;
+        }
+        margin-bottom: 1rem;
     }
+    // .homeAppHeaderImg {
+    //     border-radius: 10px;
+    //     width: 50%;
+    // }
 
     form {
 
