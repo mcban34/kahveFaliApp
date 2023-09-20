@@ -1,0 +1,8 @@
+# Dependency directories
+node_modules/
+.env
+# Optional npm cache directory
+.npm
+
+# dotenv environment variables file
+.env
